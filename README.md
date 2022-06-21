@@ -1,2 +1,3 @@
 # pokedex
-Enciclopédia sobre a franquia Pokemon, com utiilzação da poke-api (https://pokeapi.co/docs/v2)
+
+Enciclopédia sobre a franquia Pokemon, com utilização da poke-api (https://pokeapi.co/docs/v2)
