@@ -1,5 +1,7 @@
+import './Home.css';
+
 function Home() {
-  return <h1>Main Page</h1>;
+  return <section>Main Page</section>;
 }
 
 export default Home;

@@ -1,3 +1,13 @@
 header {
   background-color: #100B00;
+  padding: 15px;
+  text-align: center;
+}
+
+header img {
+  width: 250px;
+}
+
+header nav {
+  color: #ffffff;
 }

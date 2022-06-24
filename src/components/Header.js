@@ -6,7 +6,7 @@ function Header() {
     <header>
       <img src={pokedexLogo} alt="Pokedex Logo" />
       <nav>
-        <h2>Pokemon button</h2>
+        <h2>Pokemon</h2>
       </nav>
     </header>
   );
