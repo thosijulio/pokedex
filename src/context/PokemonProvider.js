@@ -1,4 +1,4 @@
-import Context from '.';
+import PokemonContext from './PokemonContext';
 import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 
@@ -11,7 +11,9 @@ function PokemonProvider({ children }) {
     );
   }, []);
 
-  return <Context.Provider value={{ pokemon, setPokemon }}>{children}</Context.Provider>;
+  return (
+    <PokemonContext.Provider value={{ pokemon, setPokemon }}>{children}</PokemonContext.Provider>
+  );
 }
 
 PokemonProvider.propTypes = {
