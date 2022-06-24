@@ -1,10 +1,12 @@
+import { Routes, Route } from 'react-router-dom';
+import Pokemon from './pages/Pokemon';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">Pokedex</header>
-    </div>
+    <Routes>
+      <Route path="/pokemon" element={<Pokemon />} />
+    </Routes>
   );
 }
 
