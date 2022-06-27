@@ -1,7 +1,11 @@
 header {
   background-color: #100B00;
-  padding: 15px;
+  height: 20vh;
+  max-height: 20vh;
   text-align: center;
+  font-family: 'Pokemon Solid', sans-serif;
+  font-size: x-large;
+  padding: 20px;
 }
 
 header img {
