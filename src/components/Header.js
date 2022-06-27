@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import pokedexLogo from '../images/pokedex-logo.png';
 import './Header.css';
 
@@ -6,7 +7,7 @@ function Header() {
     <header>
       <img src={pokedexLogo} alt="Pokedex Logo" />
       <nav>
-        <h2>Pokemon</h2>
+        <Link to="/pokemon">Pokemon</Link>
       </nav>
     </header>
   );
