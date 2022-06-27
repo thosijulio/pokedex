@@ -1,8 +1,8 @@
-main {
+.main-home {
   align-items: center;
   background-color: #FFCC00;
   display: flex;
-  height: 100vh;
+  height: 80vh;
   flex-direction: column;
   justify-content: center;
   max-height: 80vh;
@@ -10,7 +10,7 @@ main {
   text-align: center;
 }
 
-main section {
+.main-home .section-home {
   align-items: center;
   background-color: #3B341F;
   border: 4px solid #100B00;
@@ -24,11 +24,11 @@ main section {
   width: 600px;
 }
 
-section .linked-icons {
+.section-home .linked-icons {
   padding-top: 30px;
 }
 
-section .linked-icons a {
+.section-home .linked-icons a {
   cursor: pointer;
   font-size: 35px;
   margin: 0 15px;

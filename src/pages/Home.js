@@ -2,8 +2,8 @@ import './Home.css';
 
 function Home() {
   return (
-    <main>
-      <section>
+    <main className="main-home">
+      <section className="section-home">
         <h3>
           Welcome! This is a website to provide information about the Pokémon World developed by a
           fan. if you have any questions, please get in touch.
