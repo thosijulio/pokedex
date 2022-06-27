@@ -1,4 +1,11 @@
 .main-pokemon {
   background-color: #1B5CAC;
-  height: 80vh;
+  padding-top: 100px;
+}
+
+.main-pokemon section {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }

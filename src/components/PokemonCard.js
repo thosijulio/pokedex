@@ -1,21 +1,27 @@
 import { useEffect, useState } from 'react';
+import getPokemonByName from '../services/getPokemonByName';
 import PropTypes from 'prop-types';
 import './PokemonCard.css';
 
-function PokemonCard({ url }) {
+function PokemonCard({ name }) {
   const [pokemon, setPokemon] = useState({});
 
   useEffect(() => {
-    fetch(url)
-      .then((result) => result.json())
-      .then((data) => setPokemon(data));
+    getPokemonByName(name).then((data) => setPokemon(data));
   }, []);
 
-  return pokemon ? <h1>{pokemon.name}</h1> : null;
+  if (pokemon) {
+    return (
+      <div className="pokemon-card">
+        <h4>{pokemon.name}</h4>
+        <img src={pokemon.sprites.other['official-artwork']['front_default']} />
+      </div>
+    );
+  }
 }
 
 PokemonCard.propTypes = {
-  url: PropTypes.string.isRequired
+  name: PropTypes.string.isRequired
 };
 
 export default PokemonCard;
