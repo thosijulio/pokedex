@@ -7,10 +7,12 @@ function PokemonCard({ name }) {
   const [pokemon, setPokemon] = useState({});
 
   useEffect(() => {
-    getPokemonByName(name).then((data) => setPokemon(data));
+    getPokemonByName(name).then((data) => {
+      setPokemon(data);
+    });
   }, []);
 
-  if (pokemon) {
+  if (Object.keys(pokemon).length) {
     return (
       <div className="pokemon-card">
         <h4>{pokemon.name}</h4>
