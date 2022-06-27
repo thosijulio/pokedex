@@ -31,5 +31,5 @@ section .linked-icons {
 section .linked-icons a {
   cursor: pointer;
   font-size: 35px;
-  padding: 15px;
+  margin: 0 15px;
 }
