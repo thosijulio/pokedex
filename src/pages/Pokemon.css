@@ -9,3 +9,8 @@
   flex-wrap: wrap;
   justify-content: center;
 }
+
+#btn-more-pokemon {
+  height: 100px;
+  width: 100px;
+}

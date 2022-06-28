@@ -1,24 +1,36 @@
 import { useContext, useEffect, useState } from 'react';
 import PokemonCard from '../components/PokemonCard';
 import PokemonContext from '../context/PokemonContext';
+import getPokemon from '../services/getPokemon';
 import './Pokemon.css';
 
 function Pokemon() {
-  const { pokemon } = useContext(PokemonContext);
-  const [pokemonList, setPokemonList] = useState([]);
+  const { pokemon, setPokemon } = useContext(PokemonContext);
+  const [pokemonLimit, setPokemonLimit] = useState(20);
+
+  const handleClick = () => {
+    setPokemonLimit(pokemonLimit + 20);
+  };
 
   useEffect(() => {
-    if (pokemon.results) {
-      setPokemonList(pokemon.results);
-    }
-  });
+    const getMorePokemon = async () => {
+      if (pokemonLimit > 20) {
+        setPokemon(await getPokemon(pokemonLimit));
+      }
+    };
 
-  return pokemon ? (
+    getMorePokemon();
+  }, [pokemonLimit]);
+
+  return pokemon.results ? (
     <main className="main-pokemon">
       <section className="pokemon-cards-section">
-        {pokemonList.map(({ name }, index) => (
+        {pokemon.results.map(({ name }, index) => (
           <PokemonCard key={index} name={name} />
         ))}
+        <button id="btn-more-pokemon" onClick={handleClick}>
+          Ver mais
+        </button>
       </section>
     </main>
   ) : null;
