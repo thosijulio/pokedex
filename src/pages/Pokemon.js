@@ -28,10 +28,10 @@ function Pokemon() {
         {pokemon.results.map(({ name }, index) => (
           <PokemonCard key={index} name={name} />
         ))}
-        <button id="btn-more-pokemon" onClick={handleClick}>
-          Ver mais
-        </button>
       </section>
+      <button id="btn-more-pokemon" onClick={handleClick}>
+        See more
+      </button>
     </main>
   ) : null;
 }

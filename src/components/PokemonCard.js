@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import getPokemonByName from '../services/getPokemonByName';
 import PropTypes from 'prop-types';
 import './PokemonCard.css';
+import { Link } from 'react-router-dom';
 
 String.prototype.capitalize = function () {
   return this.charAt(0).toUpperCase() + this.substring(1);
@@ -28,9 +29,11 @@ function PokemonCard({ name }) {
         </div>
         <div className="pokemon-card-footer">
           <h4>Type:</h4>
-          {pokemon.types.map(({ type: { name } }, index) => (
-            <img key={index} src={require(`../images/pokemonTypes/${name}.png`)} title={name} />
-          ))}
+          <div id="pokemon-types">
+            {pokemon.types.map(({ type: { name } }, index) => (
+              <img key={index} src={require(`../images/pokemonTypes/${name}.png`)} title={name} />
+            ))}
+          </div>
           <p>
             <b>Height: </b>
             {pokemon.height / 10}m
@@ -39,6 +42,9 @@ function PokemonCard({ name }) {
             <b>Weight: </b>
             {pokemon.weight / 10}kg
           </p>
+          <Link id="btn-pokemon-details" to="/">
+            See Details
+          </Link>
         </div>
       </section>
     );

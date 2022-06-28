@@ -1,6 +1,9 @@
 .main-pokemon {
-  background-color: #EF5350;
-  padding-top: 100px;
+  align-items: center;
+  background-color: #FFCC00;
+  display: flex;
+  flex-direction: column;
+  padding-top: 50px;
 }
 
 .main-pokemon .pokemon-cards-section {
@@ -13,4 +16,5 @@
 #btn-more-pokemon {
   height: 100px;
   width: 100px;
+  margin: 40px 0 60px 0;
 }
