@@ -15,7 +15,7 @@ function Pokemon() {
 
   return pokemon ? (
     <main className="main-pokemon">
-      <section>
+      <section className="pokemon-cards-section">
         {pokemonList.map(({ name }, index) => (
           <PokemonCard key={index} name={name} />
         ))}

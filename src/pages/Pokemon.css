@@ -1,9 +1,9 @@
 .main-pokemon {
-  background-color: #1B5CAC;
+  background-color: #EF5350;
   padding-top: 100px;
 }
 
-.main-pokemon section {
+.main-pokemon .pokemon-cards-section {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
