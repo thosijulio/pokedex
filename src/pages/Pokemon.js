@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from 'react';
 import PokemonCard from '../components/PokemonCard';
 import PokemonContext from '../context/PokemonContext';
 import getPokemon from '../services/getPokemon';
+import getPokemonByRegion from '../services/getPokemonByRegion';
 import './Pokemon.css';
 
 function Pokemon() {
@@ -16,6 +17,7 @@ function Pokemon() {
     const getMorePokemon = async () => {
       if (pokemonLimit > 20) {
         setPokemon(await getPokemon(pokemonLimit));
+        console.log(await getPokemonByRegion('generation-ii'));
       }
     };
 

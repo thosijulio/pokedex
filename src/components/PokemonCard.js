@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import getPokemonByName from '../services/getPokemonByName';
+import getPokemonByNameOrId from '../services/getPokemonByNameOrId';
 import PropTypes from 'prop-types';
 import './PokemonCard.css';
 import { Link } from 'react-router-dom';
@@ -12,7 +12,7 @@ function PokemonCard({ name }) {
   const [pokemon, setPokemon] = useState({});
 
   useEffect(() => {
-    getPokemonByName(name).then((data) => {
+    getPokemonByNameOrId(name).then((data) => {
       setPokemon(data);
     });
   }, []);
