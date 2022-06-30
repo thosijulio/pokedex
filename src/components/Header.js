@@ -5,9 +5,11 @@ import './Header.css';
 function Header() {
   return (
     <header>
-      <img src={pokedexLogo} alt="Pokedex Logo" />
+      <Link to="/">
+        <img src={pokedexLogo} alt="Pokedex Logo" />
+      </Link>
       <nav>
-        <Link to="/pokemon">Pokemon</Link>
+        <Link to="/pokemon">Pokémon</Link>
       </nav>
     </header>
   );
