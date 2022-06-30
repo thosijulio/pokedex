@@ -1,0 +1,17 @@
+header {
+  background-color: #100B00;
+  height: 20vh;
+  max-height: 20vh;
+  text-align: center;
+  font-family: 'Pokemon Solid', sans-serif;
+  font-size: x-large;
+  padding: 20px;
+}
+
+header img {
+  width: 250px;
+}
+
+header nav {
+  color: #ffffff;
+}

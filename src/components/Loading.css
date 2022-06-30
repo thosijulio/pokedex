@@ -1,0 +1,12 @@
+.loading-section {
+  align-items: center;
+  background-color: #FFCC00;
+  display: flex;
+  flex-direction: column;
+  font-size: 30px;
+  font-weight: 600;
+  justify-content: center;
+  max-height: 80vh;
+  padding: 50px;
+  text-align: center;
+}
