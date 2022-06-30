@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
+import Loading from '../components/Loading';
 import PokemonCard from '../components/PokemonCard';
 import PokemonContext from '../context/PokemonContext';
 import getPokemon from '../services/getPokemon';
@@ -28,7 +29,7 @@ function Pokemon() {
   };
 
   useEffect(() => {
-    const teste = async () => {
+    const getRegionsOnMount = async () => {
       if (!regions.length) {
         const data = await getRegions();
         if (data) {
@@ -37,7 +38,7 @@ function Pokemon() {
       }
     };
 
-    teste();
+    getRegionsOnMount();
   }, [regions]);
 
   useEffect(() => {
@@ -50,11 +51,7 @@ function Pokemon() {
     getMorePokemon();
   }, [pokemonLimit]);
 
-  useEffect(() => {
-    console.log(pokemon);
-  });
-
-  return pokemon ? (
+  return pokemon.length ? (
     <main className="main-pokemon">
       <section className="pokemon-regions-section">
         <button onClick={(ev) => handleRegion(ev)} value="All">
@@ -78,7 +75,9 @@ function Pokemon() {
         </button>
       )}
     </main>
-  ) : null;
+  ) : (
+    <Loading />
+  );
 }
 
 export default Pokemon;

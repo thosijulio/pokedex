@@ -25,7 +25,10 @@ function PokemonCard({ name }) {
           <h4>{`Nº: ${pokemon.id}`}</h4>
         </div>
         <div className="pokemon-card-image">
-          <img src={pokemon.sprites.other['official-artwork']['front_default']} title="oi" />
+          <img
+            src={pokemon.sprites.other['official-artwork']['front_default']}
+            title={`${pokemon.name} artwork`}
+          />
         </div>
         <div className="pokemon-card-footer">
           <h4>Type:</h4>
