@@ -3,6 +3,7 @@ import Loading from '../components/Loading';
 import PokemonCard from '../components/PokemonCard';
 import PokemonContext from '../context/PokemonContext';
 import getPokemon from '../services/getPokemon';
+import getPokemonByNameOrId from '../services/getPokemonByNameOrId';
 import getPokemonByRegion from '../services/getPokemonByRegion';
 import getRegions from '../services/getRegions';
 import './Pokemon.css';
@@ -17,8 +18,17 @@ function Pokemon() {
     setPokemonLimit(pokemonLimit + 20);
   };
 
+  const handleInputSearch = async ({ target: { value } }) => {
+    if (value) {
+      setPokemon([]);
+      setPokemon([await getPokemonByNameOrId(value)]);
+      setShowMorePokeBtn(false);
+    }
+  };
+
   const handleRegion = async ({ target: { value } }) => {
     if (value == 'All') {
+      setPokemon([]);
       setPokemon(await getPokemon(pokemonLimit));
       setShowMorePokeBtn(true);
     } else {
@@ -51,32 +61,41 @@ function Pokemon() {
     getMorePokemon();
   }, [pokemonLimit]);
 
-  return pokemon.length ? (
+  return (
     <main className="main-pokemon">
+      <section className="pokemon-text-search">
+        <h3>Search by name or id:</h3>
+        <input onChange={(ev) => handleInputSearch(ev)} type="text" />
+      </section>
       <section className="pokemon-regions-section">
-        <button onClick={(ev) => handleRegion(ev)} value="All">
-          All
-        </button>
-        {regions.length &&
-          regions.map((region, index) => (
-            <button key={index} onClick={(ev) => handleRegion(ev)} value={region.id}>
-              {region.name}
-            </button>
+        <h3>Search by region:</h3>
+        <div className="btn-regions">
+          <button onClick={(ev) => handleRegion(ev)} value="All">
+            All
+          </button>
+          {regions.length &&
+            regions.map((region, index) => (
+              <button key={index} onClick={(ev) => handleRegion(ev)} value={region.id}>
+                {region.name.substring(0, 1).toUpperCase() + region.name.substring(1)}
+              </button>
+            ))}
+        </div>
+      </section>
+      {pokemon.length ? (
+        <section className="pokemon-cards-section">
+          {pokemon.map(({ name }, index) => (
+            <PokemonCard key={index} name={name} />
           ))}
-      </section>
-      <section className="pokemon-cards-section">
-        {pokemon.map(({ name }, index) => (
-          <PokemonCard key={index} name={name} />
-        ))}
-      </section>
+        </section>
+      ) : (
+        <Loading />
+      )}
       {showMorePokeBtn && (
         <button id="btn-more-pokemon" onClick={handleClick}>
           See more
         </button>
       )}
     </main>
-  ) : (
-    <Loading />
   );
 }
 
