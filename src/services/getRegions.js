@@ -13,6 +13,5 @@ export default async function () {
       return { id, name };
     })
   );
-  console.log(regions);
   return regions;
 }

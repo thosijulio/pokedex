@@ -21,6 +21,7 @@ function Pokemon() {
       setPokemon(await getPokemon(pokemonLimit));
       setShowMorePokeBtn(true);
     } else {
+      setPokemon([]);
       setPokemon(await getPokemonByRegion(value));
       setShowMorePokeBtn(false);
     }
@@ -33,7 +34,6 @@ function Pokemon() {
         if (data) {
           setRegions(data);
         }
-        console.log(data);
       }
     };
 
@@ -50,18 +50,25 @@ function Pokemon() {
     getMorePokemon();
   }, [pokemonLimit]);
 
-  return pokemon.results ? (
+  useEffect(() => {
+    console.log(pokemon);
+  });
+
+  return pokemon ? (
     <main className="main-pokemon">
       <section className="pokemon-regions-section">
+        <button onClick={(ev) => handleRegion(ev)} value="All">
+          All
+        </button>
         {regions.length &&
           regions.map((region, index) => (
-            <button key={index} onClick={handleRegion}>
-              {region.id}
+            <button key={index} onClick={(ev) => handleRegion(ev)} value={region.id}>
+              {region.name}
             </button>
           ))}
       </section>
       <section className="pokemon-cards-section">
-        {pokemon.results.map(({ name }, index) => (
+        {pokemon.map(({ name }, index) => (
           <PokemonCard key={index} name={name} />
         ))}
       </section>

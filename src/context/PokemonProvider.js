@@ -7,7 +7,7 @@ function PokemonProvider({ children }) {
 
   useEffect(() => {
     fetch('https://pokeapi.co/api/v2/pokemon/').then((result) =>
-      result.json().then((data) => setPokemon(data))
+      result.json().then((data) => setPokemon(data.results))
     );
   }, []);
 
