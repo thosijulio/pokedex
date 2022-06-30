@@ -1,9 +1,16 @@
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import getPokemonByNameOrId from '../services/getPokemonByNameOrId';
 
 function PokemonDetails() {
   const { pokemonId } = useParams();
+  const [pokemon, setPokemon] = useState({});
 
-  return <h1>{pokemonId}</h1>;
+  useEffect(() => {
+    getPokemonByNameOrId(pokemonId).then((result) => setPokemon(result));
+  });
+
+  return <h1>{JSON.stringify(pokemon)}</h1>;
 }
 
 export default PokemonDetails;
