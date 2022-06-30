@@ -45,7 +45,7 @@ function PokemonCard({ name }) {
             <b>Weight: </b>
             {pokemon.weight / 10}kg
           </p>
-          <Link id="btn-pokemon-details" to="/">
+          <Link id="btn-pokemon-details" to={`/pokemon/${pokemon.id}`}>
             See Details
           </Link>
         </div>
