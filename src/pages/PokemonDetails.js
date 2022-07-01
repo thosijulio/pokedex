@@ -32,11 +32,14 @@ function PokemonDetails() {
       </div>
       <div className="pokemon-details-image-description">
         {pokemon.sprites && (
-          <img
-            alt="pokemon"
-            src={pokemon.sprites.other['official-artwork']['front_default']}
-            title={`${pokemon.name} artwork`}
-          />
+          <>
+            <img
+              alt="pokemon"
+              src={pokemon.sprites.other['official-artwork']['front_default']}
+              title={`${pokemon.name} artwork`}
+            />
+            <p>{pokemon.flavor_text_entries[0].flavor_text}</p>
+          </>
         )}
       </div>
       <div>
