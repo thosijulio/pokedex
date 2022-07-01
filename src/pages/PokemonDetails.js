@@ -17,17 +17,41 @@ function PokemonDetails() {
       const dataPokemonSpecies = await getPokemonSpeciesByIdOrName(pokemonId);
 
       setPokemon({ ...dataPokemon, ...dataPokemonSpecies });
-      setIsLoading(false);
     };
 
     getPokemonInfos();
   }, []);
+
+  useEffect(() => {
+    if (Object.keys(pokemon).length > 0) {
+      setIsLoading(false);
+    }
+  }, [pokemon]);
 
   return !isLoading ? (
     <section>
       <div className="pokemon-details-header">
         <h2>{pokemon.id}</h2>
         <h2>{pokemon.name}</h2>
+      </div>
+      <div className="pokemon-details-image-description">
+        <img
+          alt="pokemon"
+          src={pokemon.sprites.other['official-artwork']['front_default']}
+          title={`${pokemon.name} artwork`}
+        />
+      </div>
+      <div>
+        <div id="pokemon-types">
+          {pokemon.types.map(({ type: { name } }, index) => (
+            <img
+              alt="pokemon"
+              key={index}
+              src={require(`../images/pokemonTypes/${name}.png`)}
+              title={name}
+            />
+          ))}
+        </div>
       </div>
     </section>
   ) : (
