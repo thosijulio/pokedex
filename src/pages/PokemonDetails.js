@@ -11,20 +11,16 @@ function PokemonDetails() {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    const getPokemonInfos = async () => {
-      setIsLoading(true);
-      const dataPokemon = await getPokemonByNameOrId(pokemonId);
-      const dataPokemonSpecies = await getPokemonSpeciesByIdOrName(pokemonId);
+    if (!Object.keys(pokemon).length) {
+      const getPokemonInfos = async () => {
+        setIsLoading(true);
+        const dataPokemon = await getPokemonByNameOrId(pokemonId);
+        const dataPokemonSpecies = await getPokemonSpeciesByIdOrName(pokemonId);
+        setPokemon({ ...dataPokemon, ...dataPokemonSpecies });
+        setIsLoading(false);
+      };
 
-      setPokemon({ ...dataPokemon, ...dataPokemonSpecies });
-    };
-
-    getPokemonInfos();
-  }, []);
-
-  useEffect(() => {
-    if (Object.keys(pokemon).length > 0) {
-      setIsLoading(false);
+      getPokemonInfos();
     }
   }, [pokemon]);
 
@@ -35,22 +31,25 @@ function PokemonDetails() {
         <h2>{pokemon.name}</h2>
       </div>
       <div className="pokemon-details-image-description">
-        <img
-          alt="pokemon"
-          src={pokemon.sprites.other['official-artwork']['front_default']}
-          title={`${pokemon.name} artwork`}
-        />
+        {pokemon.sprites && (
+          <img
+            alt="pokemon"
+            src={pokemon.sprites.other['official-artwork']['front_default']}
+            title={`${pokemon.name} artwork`}
+          />
+        )}
       </div>
       <div>
         <div id="pokemon-types">
-          {pokemon.types.map(({ type: { name } }, index) => (
-            <img
-              alt="pokemon"
-              key={index}
-              src={require(`../images/pokemonTypes/${name}.png`)}
-              title={name}
-            />
-          ))}
+          {pokemon.types &&
+            pokemon.types.map(({ type: { name } }, index) => (
+              <img
+                alt="pokemon"
+                key={index}
+                src={require(`../images/pokemonTypes/${name}.png`)}
+                title={name}
+              />
+            ))}
         </div>
       </div>
     </section>
