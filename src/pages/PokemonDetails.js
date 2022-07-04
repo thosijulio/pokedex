@@ -50,6 +50,10 @@ function PokemonDetails() {
     }
   }, [images, pokemon]);
 
+  const handleImageChange = ({ target }) => {
+    setSelectedImage(target.getAttribute('src'));
+  };
+
   return !isLoading ? (
     <section>
       <div className="pokemon-details-header">
@@ -58,6 +62,15 @@ function PokemonDetails() {
       </div>
       <div className="pokemon-details-image-description">
         <img alt="pokemon" src={selectedImage} title={`${pokemon.name} artwork`} />
+        {images.map((image, index) => (
+          <img
+            alt="pokemon"
+            className="thumb-images"
+            key={index}
+            onClick={(ev) => handleImageChange(ev)}
+            src={image}
+          />
+        ))}
         <p>
           {
             pokemon.flavor_text_entries.filter((entry) => entry.language.name === 'en')[0]
