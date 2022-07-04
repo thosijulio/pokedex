@@ -65,9 +65,7 @@ function PokemonDetails() {
     <section className="pokemon-details">
       <main className="pokemon-details-card">
         <div className="pokemon-details-header">
-          <h2>{`Nº: ${pokemon.id} - ${
-            pokemon.name.substring(0, 1).toUpperCase() + pokemon.name.substring(1)
-          }`}</h2>
+          <h2>{`Nº: ${pokemon.id} - ${upperFirstLetter(pokemon.name)}`}</h2>
         </div>
         <div className="pokemon-details-image">
           <div className="selected-image-box">
@@ -90,10 +88,7 @@ function PokemonDetails() {
           <p>
             {`${selectedPhrase.flavor_text.replace(/(\r\n|\n|\r|\f)/gm, ' ')}`}
             <b>
-              <em>{` - Pokémon ${
-                selectedPhrase.version.name.substring(0, 1).toUpperCase() +
-                selectedPhrase.version.name.substring(1)
-              } Version`}</em>
+              <em>{` - Pokémon ${upperFirstLetter(selectedPhrase.version.name)} Version`}</em>
             </b>
           </p>
         </div>

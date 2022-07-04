@@ -6,6 +6,7 @@ import getPokemon from '../services/getPokemon';
 import getPokemonByNameOrId from '../services/getPokemonByNameOrId';
 import getPokemonByRegion from '../services/getPokemonByRegion';
 import getRegions from '../services/getRegions';
+import upperFirstLetter from '../services/upperFirstLetter';
 import './Pokemon.css';
 
 function Pokemon() {
@@ -76,7 +77,7 @@ function Pokemon() {
           {regions.length &&
             regions.map((region, index) => (
               <button key={index} onClick={(ev) => handleRegion(ev)} value={region.id}>
-                {region.name.substring(0, 1).toUpperCase() + region.name.substring(1)}
+                {upperFirstLetter(region.name)}
               </button>
             ))}
         </div>
