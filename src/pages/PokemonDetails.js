@@ -21,19 +21,16 @@ function PokemonDetails() {
         const dataPokemonSpecies = await getPokemonSpeciesByIdOrName(pokemonId);
         const {
           sprites,
-          sprites: {
-            other,
-            other: { dream_world }
-          }
+          sprites: { other }
         } = dataPokemon;
 
         setImages([
-          sprites.back_default,
-          sprites.back_shiny,
+          other['official-artwork'].front_default,
+          other['dream_world'].front_default,
           sprites.front_default,
+          sprites.back_default,
           sprites.front_shiny,
-          dream_world.front_default,
-          other['official-artwork'].front_default
+          sprites.back_shiny
         ]);
         setSelectedImage(other['official-artwork'].front_default);
         setPokemon({ ...dataPokemon, ...dataPokemonSpecies });
@@ -54,7 +51,7 @@ function PokemonDetails() {
     if (Object.keys(pokemon).length > 0) {
       let interval = setInterval(() => {
         setSelectedPhrase(phrases[phrases.indexOf(selectedPhrase) + 1] || phrases[0]);
-      }, 5000);
+      }, 6000);
       return () => clearInterval(interval);
     }
   }, [pokemon, selectedPhrase]);
@@ -71,7 +68,7 @@ function PokemonDetails() {
             pokemon.name.substring(0, 1).toUpperCase() + pokemon.name.substring(1)
           }`}</h2>
         </div>
-        <div className="pokemon-details-image-description">
+        <div className="pokemon-details-image">
           <div className="selected-image-box">
             <img alt="pokemon" src={selectedImage} title={`${pokemon.name} artwork`} />
           </div>
@@ -86,32 +83,59 @@ function PokemonDetails() {
               />
             ))}
           </div>
-          <h4>Flavor Text:</h4>
-          <p>{`${selectedPhrase.flavor_text.replace(/(\r\n|\n|\r|\f)/gm, ' ')} - Pokémon ${
-            selectedPhrase.version.name.substring(0, 1).toUpperCase() +
-            selectedPhrase.version.name.substring(1)
-          } Version`}</p>
+        </div>
+        <div className="pokemon-details-flavor-text">
+          <h3>Flavor Text:</h3>
+          <p>
+            {`${selectedPhrase.flavor_text.replace(/(\r\n|\n|\r|\f)/gm, ' ')}`}
+            <b>
+              <em>{` - Pokémon ${
+                selectedPhrase.version.name.substring(0, 1).toUpperCase() +
+                selectedPhrase.version.name.substring(1)
+              } Version`}</em>
+            </b>
+          </p>
+        </div>
+        <div className="pokemon-type">
+          <h3>Type:</h3>
+          {pokemon.types.map(({ type: { name } }, index) => (
+            <img
+              alt="pokemon"
+              key={index}
+              src={require(`../images/pokemonTypes/${name}.png`)}
+              title={name.substring(0, 1).toUpperCase() + name.substring(1)}
+            />
+          ))}
         </div>
         <div className="pokemon-other-details">
-          <div className="pokemon-type">
-            <h4>Type:</h4>
-            {pokemon.types.map(({ type: { name } }, index) => (
-              <img
-                alt="pokemon"
-                key={index}
-                src={require(`../images/pokemonTypes/${name}.png`)}
-                title={name.substring(0, 1).toUpperCase() + name.substring(1)}
-              />
-            ))}
-          </div>
           <div className="pokemon-shape">
-            <p>{`Type: ${
-              pokemon.shape.name.substring(0, 1).toUpperCase() + pokemon.shape.name.substring(1)
-            }`}</p>
-            <p>{`Weight: ${pokemon.weight / 10} m`}</p>
-            <p>{`Height: ${pokemon.height / 10} kg`}</p>
+            <h3>Shape:</h3>
+            <p>
+              <b>Type: </b>
+              {`${
+                pokemon.shape.name.substring(0, 1).toUpperCase() + pokemon.shape.name.substring(1)
+              }`}
+            </p>
+            <p>
+              <b>Weight: </b>
+              {`${pokemon.weight / 10} m`}
+            </p>
+            <p>
+              <b>Height: </b>
+              {`${pokemon.height / 10} kg`}
+            </p>
           </div>
-          <div className="pokemon-stats"></div>
+          <div className="pokemon-stats">
+            <h3>Stats:</h3>
+            <div className="stats">
+              {pokemon.stats.map((stat, index) => (
+                <p key={index}>
+                  <b>{stat.stat.name}: </b>
+                  {stat.base_stat}
+                </p>
+              ))}
+            </div>
+          </div>
         </div>
       </main>
     </section>
