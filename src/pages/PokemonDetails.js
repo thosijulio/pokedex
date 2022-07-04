@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import Loading from '../components/Loading';
 import getPokemonByNameOrId from '../services/getPokemonByNameOrId';
 import getPokemonSpeciesByIdOrName from '../services/getPokemonSpeciesByIdOrName';
+import upperFirstLetter from '../services/upperFirstLetter';
 import './PokemonDetails.css';
 
 function PokemonDetails() {
@@ -112,17 +113,15 @@ function PokemonDetails() {
             <h3>Shape:</h3>
             <p>
               <b>Type: </b>
-              {`${
-                pokemon.shape.name.substring(0, 1).toUpperCase() + pokemon.shape.name.substring(1)
-              }`}
+              {upperFirstLetter(pokemon.shape.name)}
             </p>
             <p>
               <b>Weight: </b>
-              {`${pokemon.weight / 10} m`}
+              {`${pokemon.weight / 10}m`}
             </p>
             <p>
               <b>Height: </b>
-              {`${pokemon.height / 10} kg`}
+              {`${pokemon.height / 10}kg`}
             </p>
           </div>
           <div className="pokemon-stats">
@@ -135,6 +134,21 @@ function PokemonDetails() {
                 </p>
               ))}
             </div>
+          </div>
+          <div className="pokemon-other-infos">
+            <h3>Other infos:</h3>
+            <p>
+              <b>Growth rate: </b>
+              {upperFirstLetter(pokemon.growth_rate.name)}
+            </p>
+            <p>
+              <b>Habitat: </b>
+              {pokemon.habitat ? upperFirstLetter(pokemon.habitat.name) : 'None'}
+            </p>
+            <p>
+              <b>Color: </b>
+              {upperFirstLetter(pokemon.color.name)}
+            </p>
           </div>
         </div>
       </main>

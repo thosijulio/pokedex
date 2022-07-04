@@ -18,7 +18,7 @@
   flex-wrap: wrap;
   overflow: hidden;
   text-align: center;
-  width: 800px;
+  width: 1000px;
 }
 .pokemon-details-header {
   display: flex;
@@ -83,13 +83,16 @@
 .pokemon-type img {
   margin: 0 3px;
 }
+
 .pokemon-other-details {
+  align-items: flex-start;
   display: flex;
-  justify-content: space-around;
   padding: 15px 0;
-  width: 500px;
 }
 
+.pokemon-other-details > div {
+  margin: 0 20px;
+}
 .stats {
   display: flex;
   flex-wrap: wrap;
