@@ -86,13 +86,15 @@ function PokemonDetails() {
               />
             ))}
           </div>
+          <h4>Flavor Text:</h4>
           <p>{`${selectedPhrase.flavor_text.replace(/(\r\n|\n|\r|\f)/gm, ' ')} - Pokémon ${
             selectedPhrase.version.name.substring(0, 1).toUpperCase() +
             selectedPhrase.version.name.substring(1)
           } Version`}</p>
         </div>
         <div className="pokemon-other-details">
-          <div className="pokemon-types">
+          <div className="pokemon-type">
+            <h4>Type:</h4>
             {pokemon.types.map(({ type: { name } }, index) => (
               <img
                 alt="pokemon"
@@ -103,9 +105,13 @@ function PokemonDetails() {
             ))}
           </div>
           <div className="pokemon-shape">
-            <p>{`${pokemon.weight / 10} m`}</p>
-            <p>{`${pokemon.height / 10} kg`}</p>
+            <p>{`Type: ${
+              pokemon.shape.name.substring(0, 1).toUpperCase() + pokemon.shape.name.substring(1)
+            }`}</p>
+            <p>{`Weight: ${pokemon.weight / 10} m`}</p>
+            <p>{`Height: ${pokemon.height / 10} kg`}</p>
           </div>
+          <div className="pokemon-stats"></div>
         </div>
       </main>
     </section>
