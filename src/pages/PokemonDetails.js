@@ -104,7 +104,7 @@ function PokemonDetails() {
               alt="pokemon"
               key={index}
               src={require(`../images/pokemonTypes/${name}.png`)}
-              title={name.substring(0, 1).toUpperCase() + name.substring(1)}
+              title={upperFirstLetter(name)}
             />
           ))}
         </div>

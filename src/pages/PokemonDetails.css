@@ -18,7 +18,7 @@
   flex-wrap: wrap;
   overflow: hidden;
   text-align: center;
-  width: 1000px;
+  width: 50%;
 }
 .pokemon-details-header {
   display: flex;
@@ -72,8 +72,8 @@
 }
 
 .pokemon-details-flavor-text {
-  padding: 0 10px;
   margin: 0 0 20px 0;
+  padding: 0 5px;
 }
 
 .pokemon-type h3 {
@@ -85,19 +85,21 @@
 }
 
 .pokemon-other-details {
-  align-items: flex-start;
+  align-items: center;
   display: flex;
+  justify-content: center;
+  margin: auto;
   padding: 15px 0;
 }
 
 .pokemon-other-details > div {
-  margin: 0 20px;
+  width: 270px;
 }
+
 .stats {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: 260px;
 }
 
 .stats p {
