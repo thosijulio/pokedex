@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import Loading from '../components/Loading';
 import getPokemonByNameOrId from '../services/getPokemonByNameOrId';
 import getPokemonSpeciesByIdOrName from '../services/getPokemonSpeciesByIdOrName';
-import upperFirstLetter from '../services/upperFirstLetter';
+import upperFirstLetter from '../helpers/upperFirstLetter';
 import './PokemonDetails.css';
 
 function PokemonDetails() {

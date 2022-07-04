@@ -6,7 +6,7 @@ import getPokemon from '../services/getPokemon';
 import getPokemonByNameOrId from '../services/getPokemonByNameOrId';
 import getPokemonByRegion from '../services/getPokemonByRegion';
 import getRegions from '../services/getRegions';
-import upperFirstLetter from '../services/upperFirstLetter';
+import upperFirstLetter from '../helpers/upperFirstLetter';
 import './Pokemon.css';
 
 function Pokemon() {
