@@ -21,7 +21,7 @@
   height: 250px;
   justify-content: center;
   padding: 30px;
-  width: 600px;
+  width: 40%;
 }
 
 .section-home .linked-icons {
@@ -32,4 +32,15 @@
   cursor: pointer;
   font-size: 35px;
   margin: 0 15px;
+}
+
+@media screen and (max-width: 1000px) {
+  .main-home .section-home {
+    height: auto;
+    width: 100%;
+  }
+
+  .section-home .linked-icons a {
+    margin: 5px;
+  }
 }

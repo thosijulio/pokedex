@@ -1,0 +1,136 @@
+.pokemon-details {
+  background-color: #FFCC00;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  min-height: 80vh;
+  padding: 30px 0;
+}
+
+.pokemon-details-card {
+  align-items: center;
+  background-color: #3B341F;
+  border: 4px solid #100B00;
+  border-radius: 20px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  overflow: hidden;
+  text-align: center;
+  width: 50%;
+}
+.pokemon-details-header {
+  display: flex;
+  justify-content: center;
+  padding: 15px 0;
+  width: 100%;
+}
+
+.pokemon-details-image {
+  align-items: center;
+  background-color: #100B00;
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 20px 0;
+  width: 100%;
+}
+
+.selected-image-box {
+  background-color: #1B5CAC;
+  border-bottom: 4px solid black;
+  border-top: 4px solid black;
+  width: 100%;
+}
+
+.selected-image-box img {
+  text-align: center;
+  width: 300px;
+  height: 300px;
+}
+
+.other-images {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 8px;
+}
+
+.other-images img {
+  background-color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 5px;
+  padding: 10px;
+  width: 60px;
+  height: 60px;
+}
+
+.pokemon-type img {
+  width: 40px;
+  height: 40px;
+}
+
+.pokemon-details-flavor-text {
+  margin: 0 0 20px 0;
+  padding: 0 5px;
+  width: 80%;
+}
+
+.pokemon-type h3 {
+  margin-bottom: 5px;
+}
+
+.pokemon-type img {
+  margin: 0 3px;
+}
+
+.pokemon-other-details {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  padding: 15px 0;
+}
+
+.pokemon-other-details > div {
+  margin: 10px 0;
+  width: 270px;
+}
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.stats p {
+  margin: 0 4px;
+}
+
+@media screen and (max-width: 1600px) {
+  .pokemon-other-details {
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 1000px){
+  .pokemon-details-card {
+    width: 80%;
+  }
+
+  .pokemon-other-details > div {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .selected-image-box img {
+    text-align: center;
+    width: 150px;
+    height: 150px;
+  }
+}
+  

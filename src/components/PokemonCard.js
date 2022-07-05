@@ -34,7 +34,12 @@ function PokemonCard({ name }) {
           <h4>Type:</h4>
           <div id="pokemon-types">
             {pokemon.types.map(({ type: { name } }, index) => (
-              <img key={index} src={require(`../images/pokemonTypes/${name}.png`)} title={name} />
+              <img
+                alt="pokemon"
+                key={index}
+                src={require(`../images/pokemonTypes/${name}.png`)}
+                title={name}
+              />
             ))}
           </div>
           <p>
@@ -45,7 +50,7 @@ function PokemonCard({ name }) {
             <b>Weight: </b>
             {pokemon.weight / 10}kg
           </p>
-          <Link id="btn-pokemon-details" to="/">
+          <Link id="btn-pokemon-details" to={`/pokemon/${pokemon.id}`}>
             See Details
           </Link>
         </div>
