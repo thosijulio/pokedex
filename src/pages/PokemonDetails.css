@@ -125,4 +125,12 @@
     width: 90%;
   }
 }
+
+@media screen and (max-width: 350px) {
+  .selected-image-box img {
+    text-align: center;
+    width: 150px;
+    height: 150px;
+  }
+}
   
