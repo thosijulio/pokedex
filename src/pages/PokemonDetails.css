@@ -52,7 +52,8 @@
 .other-images {
   align-items: center;
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
   padding: 8px;
 }
 
@@ -74,6 +75,7 @@
 .pokemon-details-flavor-text {
   margin: 0 0 20px 0;
   padding: 0 5px;
+  width: 80%;
 }
 
 .pokemon-type h3 {
@@ -93,6 +95,7 @@
 }
 
 .pokemon-other-details > div {
+  margin: 10px 0;
   width: 270px;
 }
 
@@ -105,3 +108,21 @@
 .stats p {
   margin: 0 4px;
 }
+
+@media screen and (max-width: 1600px) {
+  .pokemon-other-details {
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 1000px){
+  .pokemon-details-card {
+    width: 80%;
+  }
+
+  .pokemon-other-details > div {
+    width: 90%;
+  }
+}
+  
