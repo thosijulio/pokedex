@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/thosijulio.github.io/pokedex/static/css/main.595120ad.css",
+    "main.js": "/thosijulio.github.io/pokedex/static/js/main.17aec3b4.js",
+    "static/media/pokedex-logo.png": "/thosijulio.github.io/pokedex/static/media/pokedex-logo.907dcf3a592a0e37e0dd.png",
+    "index.html": "/thosijulio.github.io/pokedex/index.html",
+    "main.595120ad.css.map": "/thosijulio.github.io/pokedex/static/css/main.595120ad.css.map",
+    "main.17aec3b4.js.map": "/thosijulio.github.io/pokedex/static/js/main.17aec3b4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.595120ad.css",
+    "static/js/main.17aec3b4.js"
+  ]
+}
