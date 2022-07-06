@@ -5,8 +5,7 @@
   height: 80vh;
   flex-direction: column;
   justify-content: center;
-  max-height: 80vh;
-  padding: 50px;
+  padding: 50px 20px;
   text-align: center;
 }
 
@@ -42,5 +41,23 @@
 
   .section-home .linked-icons a {
     margin: 5px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .main-home .section-home {
+    padding: 5px;
+  }
+  .main-home .section-home h3 {
+    font-size: small;
+    width: 100%;
+  }
+
+  .section-home .linked-icons {
+    padding-top: 5px;
+  }
+
+  .section-home .linked-icons a {
+    font-size: 20px;
   }
 }
