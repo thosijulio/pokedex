@@ -76,6 +76,7 @@
 
 @media screen and (max-width: 500px) {
   .main-pokemon {
+    background-color: red;
     padding-top: 15px;
   }
   .pokemon-text-search input {

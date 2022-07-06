@@ -2,7 +2,7 @@
   align-items: center;
   background-color: #FFCC00;
   display: flex;
-  height: 80vh;
+  min-height: 80vh;
   flex-direction: column;
   justify-content: center;
   padding: 50px 20px;
@@ -45,12 +45,14 @@
 }
 
 @media screen and (max-width: 300px) {
+  .main-home {
+    padding: 10px;
+  }
   .main-home .section-home {
     padding: 5px;
   }
   .main-home .section-home h3 {
     font-size: small;
-    width: 100%;
   }
 
   .section-home .linked-icons {
