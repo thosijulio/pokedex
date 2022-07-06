@@ -34,9 +34,7 @@ header > nav {
   header > a > img {
     width: 70%;
   }
-}
-
-@media screen and (max-width: 300px) {
+  
   header > nav {
     font-size: medium;
   }
