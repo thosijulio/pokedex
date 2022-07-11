@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import TypesCard from '../components/TypesCard';
+import TypeCard from '../components/TypeCard';
 import getTypes from '../services/getTypes';
 import './Types.css';
 
@@ -13,8 +13,8 @@ function Types() {
   }, [types]);
   return (
     <main className="main-types">
-      {types.map(({ url }, index) => (
-        <TypesCard key={index} url={url} />
+      {types.map(({ name }, index) => (
+        <TypeCard key={index} name={name} />
       ))}
     </main>
   );

@@ -35,7 +35,7 @@ function PokemonCard({ name }) {
           <div id="pokemon-types">
             {pokemon.types.map(({ type: { name } }, index) => (
               <img
-                alt="pokemon"
+                alt="pokemon type"
                 key={index}
                 src={require(`../images/pokemonTypes/${name}.png`)}
                 title={name}
