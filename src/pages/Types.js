@@ -13,9 +13,11 @@ function Types() {
   }, [types]);
   return (
     <main className="main-types">
-      {types.map(({ name }, index) => (
-        <TypeCard key={index} name={name} />
-      ))}
+      <section className="types-cards-section">
+        {types.map(({ name }, index) => (
+          <TypeCard key={index} name={name} />
+        ))}
+      </section>
     </main>
   );
 }
