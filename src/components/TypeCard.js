@@ -38,68 +38,78 @@ function TypeCard({ name }) {
         <div className="type-card-other-infos">
           <div className="type-card-damage-relation">
             <h4>Double damage from: </h4>
-            {double_damage_from.length
-              ? double_damage_from.map(({ name }, index) => (
-                  <img
-                    alt={`${name}`}
-                    key={index}
-                    src={require(`../images/pokemonTypes/${name}.png`)}
-                    title={`${name}`}
-                  />
-                ))
-              : 'None'}
+            {double_damage_from.length ? (
+              double_damage_from.map(({ name }, index) => (
+                <img
+                  alt={`${name}`}
+                  key={index}
+                  src={require(`../images/pokemonTypes/${name}.png`)}
+                  title={`${name}`}
+                />
+              ))
+            ) : (
+              <p>None</p>
+            )}
           </div>
           <div className="type-card-damage-relation">
             <h4>Double damage to: </h4>
-            {double_damage_to.length
-              ? double_damage_to.map(({ name }, index) => (
-                  <img
-                    alt={`${name}`}
-                    key={index}
-                    src={require(`../images/pokemonTypes/${name}.png`)}
-                    title={`${name}`}
-                  />
-                ))
-              : 'None'}
+            {double_damage_to.length ? (
+              double_damage_to.map(({ name }, index) => (
+                <img
+                  alt={`${name}`}
+                  key={index}
+                  src={require(`../images/pokemonTypes/${name}.png`)}
+                  title={`${name}`}
+                />
+              ))
+            ) : (
+              <p>None</p>
+            )}
           </div>
           <div className="type-card-damage-relation">
             <h4>Half damage from: </h4>
-            {half_damage_from.length
-              ? half_damage_from.map(({ name }, index) => (
-                  <img
-                    alt={`${name}`}
-                    key={index}
-                    src={require(`../images/pokemonTypes/${name}.png`)}
-                    title={`${name}`}
-                  />
-                ))
-              : 'None'}
+            {half_damage_from.length ? (
+              half_damage_from.map(({ name }, index) => (
+                <img
+                  alt={`${name}`}
+                  key={index}
+                  src={require(`../images/pokemonTypes/${name}.png`)}
+                  title={`${name}`}
+                />
+              ))
+            ) : (
+              <p>None</p>
+            )}
           </div>
           <div className="type-card-damage-relation">
             <h4>Half damage to: </h4>
-            {half_damage_to.length
-              ? half_damage_to.map(({ name }, index) => (
-                  <img
-                    alt={`${name}`}
-                    key={index}
-                    src={require(`../images/pokemonTypes/${name}.png`)}
-                    title={`${name}`}
-                  />
-                ))
-              : 'None'}
+            {half_damage_to.length ? (
+              half_damage_to.map(({ name }, index) => (
+                <img
+                  alt={`${name}`}
+                  key={index}
+                  src={require(`../images/pokemonTypes/${name}.png`)}
+                  title={`${name}`}
+                />
+              ))
+            ) : (
+              <p>None</p>
+            )}
           </div>
           <div className="type-card-damage-relation">
             <h4>No damage from: </h4>
-            {no_damage_from.length
-              ? no_damage_from.map(({ name }, index) => (
-                  <img
-                    alt={`${name}`}
-                    key={index}
-                    src={require(`../images/pokemonTypes/${name}.png`)}
-                    title={`${name}`}
-                  />
-                ))
-              : 'None'}
+            {no_damage_from.length ? (
+              no_damage_from.map(({ name }, index) => (
+                <img
+                  alt={`${name}`}
+                  key={index}
+                  src={require(`../images/pokemonTypes/${name}.png`)}
+                  title={`${name}`}
+                />
+              ))
+            ) : (
+              <p>None</p>
+            )}
           </div>
           <div className="type-card-damage-relation">
             <h4>No damage to: </h4>
