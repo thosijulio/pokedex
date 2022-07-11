@@ -17,15 +17,12 @@ header > a > img {
 
 header > nav {
   align-self: flex-end;
-  align-items: center;
   background-color: #1B5CAC;
   color: #ffffff;
   display: flex;
   font-size: x-large;
   font-weight: 600;
-  height: 5vh;
   justify-content: center;
-  max-height: 5vh;
   padding: 10px 0;
   width: 100%;
 }
@@ -34,11 +31,13 @@ header > nav > a {
   margin: auto 10px;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 1300px) {
   header > a > img {
     width: 70%;
   }
-  
+}
+
+@media screen and (max-width: 500px) {
   header > nav {
     font-size: medium;
   }
