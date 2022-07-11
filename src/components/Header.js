@@ -10,6 +10,7 @@ function Header() {
       </Link>
       <nav>
         <Link to="/pokemon">Pokémon</Link>
+        <Link to="/types">Types</Link>
       </nav>
     </header>
   );

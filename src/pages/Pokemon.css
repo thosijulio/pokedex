@@ -73,3 +73,13 @@
   margin: 15px;
   width: 110px;
 }
+
+@media screen and (max-width: 500px) {
+  .main-pokemon {
+    padding-top: 15px;
+  }
+  .pokemon-text-search input {
+    padding: 3px 5px;
+    width: 80%;
+  }
+}

@@ -62,7 +62,7 @@ function Pokemon() {
     getMorePokemon();
   }, [pokemonLimit]);
 
-  return (
+  return regions.length ? (
     <main className="main-pokemon">
       <section className="pokemon-text-search">
         <h3>Search by name or id:</h3>
@@ -74,12 +74,11 @@ function Pokemon() {
           <button onClick={(ev) => handleRegion(ev)} value="All">
             All
           </button>
-          {regions.length &&
-            regions.map((region, index) => (
-              <button key={index} onClick={(ev) => handleRegion(ev)} value={region.id}>
-                {upperFirstLetter(region.name)}
-              </button>
-            ))}
+          {regions.map((region, index) => (
+            <button key={index} onClick={(ev) => handleRegion(ev)} value={region.id}>
+              {upperFirstLetter(region.name)}
+            </button>
+          ))}
         </div>
       </section>
       {pokemon.length ? (
@@ -97,6 +96,8 @@ function Pokemon() {
         </button>
       )}
     </main>
+  ) : (
+    <Loading />
   );
 }
 

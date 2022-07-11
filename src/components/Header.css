@@ -2,28 +2,43 @@ header {
   align-items: center;
   background-color: #100B00;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   height: 20vh;
-  justify-content: flex-end;
+  justify-content: center;
+  max-height: 20vh;
   text-align: center;
-  font-family: 'Pokemon Solid', sans-serif;
-  font-size: x-large;
 }
 
-header img {
-  padding-bottom: 20px;
-  width: 65%;
+header > a > img {
+  margin: auto;
+  width: 90%;
 }
 
-header nav {
-  align-items: center;
+header > nav {
+  align-self: flex-end;
   background-color: #1B5CAC;
   color: #ffffff;
   display: flex;
   font-size: x-large;
   font-weight: 600;
-  height: 50px;
   justify-content: center;
   padding: 10px 0;
   width: 100%;
+}
+
+header > nav > a {
+  margin: auto 10px;
+}
+
+@media screen and (max-width: 1300px) {
+  header > a > img {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  header > nav {
+    font-size: medium;
+  }
 }

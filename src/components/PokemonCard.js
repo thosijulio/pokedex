@@ -33,14 +33,18 @@ function PokemonCard({ name }) {
         <div className="pokemon-card-footer">
           <h4>Type:</h4>
           <div id="pokemon-types">
-            {pokemon.types.map(({ type: { name } }, index) => (
-              <img
-                alt="pokemon"
-                key={index}
-                src={require(`../images/pokemonTypes/${name}.png`)}
-                title={name}
-              />
-            ))}
+            {pokemon.types.map(({ type: { name, url } }, index) => {
+              console.log(url);
+              return (
+                <Link key={index} to={`/type/${url.substring(30)}`}>
+                  <img
+                    alt="pokemon type"
+                    src={require(`../images/pokemonTypes/${name}.png`)}
+                    title={name}
+                  />
+                </Link>
+              );
+            })}
           </div>
           <p>
             <b>Height: </b>
