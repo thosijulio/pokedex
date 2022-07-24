@@ -5,6 +5,7 @@
   border-radius: 15px;
   display: flex;
   flex-wrap: wrap;
+  height: 600px;
   justify-content: center;
   margin: 10px;
   text-align: center;
@@ -32,34 +33,20 @@
 .type-card-other-infos {
   color: #FFF;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   margin: 30px auto 10px auto;
 }
 
 .type-card-damage-relation {
-  height: 90px;
+  padding: 0 0 10px 0;
 }
 
 .type-card-damage-relation > h4 {
-  margin: 10px;
+  padding: 0 0 10px 0;
 }
 
-.type-card-other-infos > .type-card-damage-relation > img {
-  cursor: pointer;
-  width: 40px;
-}
-
-#btn-type-details {
-  align-items: center;
-  background-color: #EF5350;
-  border: 3px solid #100B00;
-  border-radius: 8px;
-  color: #FFF;
-  display: flex;
-  font-size: large;
-  font-weight: 600;
-  height: 40px;
-  justify-content: center;
-  margin: 10px 0;
-  width: 130px;
+.type-card-other-infos > .type-card-damage-relation > .type-card-type-icons > img {
+  margin-bottom: 5px;
+  width: 35px;
 }
