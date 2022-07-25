@@ -16,7 +16,7 @@ header > a > img {
 }
 
 header > nav {
-  align-self: flex-end;
+  align-self: center;
   background-color: #1B5CAC;
   color: #ffffff;
   display: flex;

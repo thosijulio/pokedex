@@ -18,9 +18,11 @@
 }
 
 .whos-pokemon-options {
+  align-items: center;
   background-color: #3B341F;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   min-height: 30vh;
 }
 
@@ -42,12 +44,27 @@
   padding: 20px;
 }
 
+.whos-pokemon-options > h1 {
+  color: #fff;
+  padding: 0 0 10px 0;
+}
+
 .whos-pokemon-options > .results {
   align-items: center;
   color: #fff;
   display: flex;
-  flex-direction: column;
   justify-content: center;
+}
+
+.results > div {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 100px;
+}
+
+.results > div > h2 {
+  padding: 0 10px;
 }
 
 @media screen and (max-width: 1200px) {
@@ -59,11 +76,50 @@
   }
 }
 
+@media screen and (max-width: 950px) {
+  .whos-pokemon-options > .options > div {
+    align-items: center;
+    border: 3px solid #100B00;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    height: 70px;
+    justify-content: center;
+    margin: 10px;
+    padding: 10px;
+    width: 150px;
+  }
+}
+
 @media screen and (max-width: 700px) {
   .whos-pokemon-hidden {
     padding: 40% 5%;
   }
   .whos-pokemon-hidden > img {
     width: 40%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .whos-pokemon-options > h1 {
+    font-size: large;
+  }
+
+  .results > div {
+    font-size: small;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .whos-pokemon-options > .options > div {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: medium;
+    font-weight: 600;
+    height: 50px;
+    justify-content: center;
+    margin: 5px;
+    padding: 10px 5px;
+    width: 100px;
   }
 }
