@@ -11,6 +11,7 @@ function Header() {
       <nav>
         <Link to="/pokemon">Pokémon</Link>
         <Link to="/types">Types</Link>
+        <Link to="/whos-that-pokemon">Who&apos;s that pokemon</Link>
       </nav>
     </header>
   );
