@@ -1,10 +1,11 @@
 .pokemon-details {
+  align-items: center;
   background-color: #FFCC00;
   display: flex;
   justify-content: center;
   margin: 0 auto;
   min-height: 80vh;
-  padding: 30px 0;
+  max-height: 80vh;
 }
 
 .pokemon-details-card {
@@ -45,8 +46,8 @@
 
 .selected-image-box img {
   text-align: center;
-  width: 300px;
-  height: 300px;
+  width: 230px;
+  height: auto;
 }
 
 .other-images {
