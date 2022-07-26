@@ -2,10 +2,12 @@ import { useEffect, useState } from 'react';
 import getFourRandomPokemon from '../services/getFourRandomPokemon';
 import upperFirstLetter from '../helpers/upperFirstLetter';
 import './WhosThatPokemon.css';
+import { Link } from 'react-router-dom';
 
 function WhosThatPokemon() {
   const [options, setOptions] = useState([]);
   const [correctPokemon, setCorrectPokemon] = useState({});
+  const [gameIsFinished, setGameIsFinished] = useState(true);
   const [hits, setHits] = useState(0);
   const [misses, setMisses] = useState(0);
 
@@ -21,6 +23,7 @@ function WhosThatPokemon() {
     const btnOptions = document.getElementsByClassName('option-btn');
     const image = document.getElementById('hidden-pokemon');
     image.style.filter = 'brightness(100%)';
+    setGameIsFinished(true);
     if (target.innerText === upperFirstLetter(correctPokemon.name)) {
       setHits(hits + 1);
     } else setMisses(misses + 1);
@@ -30,15 +33,17 @@ function WhosThatPokemon() {
         btnOptions[index].style.backgroundColor = '#80FF72';
       } else {
         btnOptions[index].style.backgroundColor = '#EF5350';
+        btnOptions[index].style.color = '#fff';
       }
     }
-
     setTimeout(() => {
       getFourRandomPokemon().then((data) => setOptions(data));
       image.style.filter = 'brightness(0%)';
       for (let index = 0; index < btnOptions.length; index += 1) {
         btnOptions[index].style.backgroundColor = '#FFCC00';
+        btnOptions[index].style.color = '#100B00';
       }
+      setGameIsFinished(false);
     }, 3000);
   };
 
@@ -53,6 +58,11 @@ function WhosThatPokemon() {
           />
         )}
       </section>
+      {gameIsFinished && (
+        <Link target="_blank" to={`/pokemon/${correctPokemon.id}`}>
+          See details
+        </Link>
+      )}
       <section className="whos-pokemon-options">
         <div className="options">
           {options.map((pokemon, index) => (
@@ -61,6 +71,7 @@ function WhosThatPokemon() {
             </div>
           ))}
         </div>
+
         <h1>Results:</h1>
         <div className="results">
           <div className="hits-results">
