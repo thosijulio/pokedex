@@ -5,6 +5,7 @@
   border-radius: 15px;
   display: flex;
   flex-wrap: wrap;
+  height: 640px;
   justify-content: center;
   margin: 10px;
   text-align: center;
@@ -33,20 +34,27 @@
   color: #FFF;
   display: flex;
   flex-direction: column;
-  margin: 30px auto 10px auto;
+  margin: 15px auto;
 }
 
-.type-card-damage-relation {
-  height: 90px;
+.icons-damage-relation {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .type-card-damage-relation > h4 {
   margin: 10px;
 }
 
-.type-card-other-infos > .type-card-damage-relation > img {
+.type-card-damage-relation > div > img {
   cursor: pointer;
   width: 40px;
+}
+
+.type-card-footer {
+  align-self: flex-end;
 }
 
 #btn-type-details {
@@ -62,4 +70,51 @@
   justify-content: center;
   margin: 10px 0;
   width: 130px;
+}
+
+@media screen and (max-width: 680px) {
+  .type-card {
+    height: auto;
+    width: 200px;
+  }
+  .type-card-header {
+    height: 40px;
+  }
+
+  .type-card-header > h3 {
+    align-items: center;
+    display: flex;
+    font-size: medium;
+  }
+  
+  .type-card-header > img {
+    width: 20px;
+  }
+
+  .type-card-other-infos {
+    margin: 10px auto;
+  }
+
+  .type-card-damage-relation > h4 {
+    font-size: small;
+    margin: 10px;
+  }
+
+  .type-card-damage-relation > div > img {
+    cursor: pointer;
+    width: 25px;
+  }
+
+  .icons-damage-relation > p {
+    font-size: small;
+  }
+
+  #btn-type-details {
+    font-size: small;
+    font-weight: 600;
+    height: 30px;
+    justify-content: center;
+    margin: 10px 0;
+    width: 95px;
+  }
 }
