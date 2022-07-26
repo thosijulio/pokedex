@@ -58,11 +58,7 @@ function WhosThatPokemon() {
           />
         )}
       </section>
-      {gameIsFinished && (
-        <Link target="_blank" to={`/pokemon/${correctPokemon.id}`}>
-          See details
-        </Link>
-      )}
+      {gameIsFinished && <Link to={`/pokemon/${correctPokemon.id}`}>See details</Link>}
       <section className="whos-pokemon-options">
         <div className="options">
           {options.map((pokemon, index) => (
