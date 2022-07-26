@@ -12,11 +12,11 @@ header {
 
 header > a > img {
   margin: auto;
-  width: 90%;
+  width: 70%;
 }
 
 header > nav {
-  align-self: center;
+  align-self: flex-end;
   background-color: #1B5CAC;
   color: #ffffff;
   display: flex;
@@ -29,12 +29,6 @@ header > nav {
 
 header > nav > a {
   margin: auto 10px;
-}
-
-@media screen and (max-width: 1300px) {
-  header > a > img {
-    width: 70%;
-  }
 }
 
 @media screen and (max-width: 500px) {

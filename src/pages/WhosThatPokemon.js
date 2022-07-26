@@ -61,7 +61,7 @@ function WhosThatPokemon() {
             </div>
           ))}
         </div>
-        <h1>Results</h1>
+        <h1>Results:</h1>
         <div className="results">
           <div className="hits-results">
             <i className="fa-solid fa-circle-check fa-2xl" />
